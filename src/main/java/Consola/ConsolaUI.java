@@ -34,7 +34,7 @@ public class ConsolaUI {
 
         mostrarMapa(mapa, numeroVariables);
 
-        System.out.println("\n✅ Programa finalizado correctamente.");
+        System.out.println("\n Programa finalizado correctamente.");
     }
 
     private int pedirNumeroVariables() {
@@ -43,9 +43,9 @@ public class ConsolaUI {
             try {
                 int n = Integer.parseInt(scanner.nextLine());
                 if (n > 0) return n;
-                System.out.println("❌ Debe ser mayor que 0.");
+                System.out.println("Debe ser mayor que 0.");
             } catch (NumberFormatException e) {
-                System.out.println("❌ Ingrese un número válido.");
+                System.out.println("Ingrese un número válido.");
             }
         }
     }
@@ -68,7 +68,7 @@ public class ConsolaUI {
                     salidas[i] = true;
                     break;
                 }
-                System.out.println("❌ Solo se permite 0 o 1.");
+                System.out.println("Solo se permite 0 o 1.");
             }
         }
         return salidas;
