@@ -1,8 +1,12 @@
 package Consola;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 import Lógica.TablaVerdad;
+import Lógica.QuineMcCluskey;
+import Lógica.Term;
 import Modelo.MapaKarnaugh;
 
 public class ConsolaUI {
@@ -21,20 +25,56 @@ public class ConsolaUI {
 
         int numeroVariables = pedirNumeroVariables();
 
-        // TABLA DE VERDAD
         TablaVerdad tabla = new TablaVerdad(numeroVariables);
         boolean[][] combinaciones = tabla.generarCombinaciones();
 
         boolean[] salidas = pedirSalidas(combinaciones);
-
         mostrarTabla(combinaciones, salidas, numeroVariables);
 
         MapaKarnaugh mapaKarnaugh = new MapaKarnaugh(numeroVariables);
         int[][] mapa = mapaKarnaugh.construirMapa(salidas);
-
         mostrarMapa(mapa, numeroVariables);
 
-        System.out.println("\n Programa finalizado correctamente.");
+        List<Integer> minterms = obtenerMinterms(salidas);
+        List<Term> primos = QuineMcCluskey.generarPrimos(minterms, numeroVariables);
+        String expresion = construirExpresion(primos);
+
+        mostrarResultado(expresion);
+
+        System.out.println("\nPrograma finalizado correctamente.");
+    }
+
+    private List<Integer> obtenerMinterms(boolean[] salidas) {
+        List<Integer> minterms = new ArrayList<>();
+        for (int i = 0; i < salidas.length; i++) {
+            if (salidas[i]) minterms.add(i);
+        }
+        return minterms;
+    }
+
+    private String construirExpresion(List<Term> primos) {
+        StringBuilder sb = new StringBuilder();
+
+        for (int i = 0; i < primos.size(); i++) {
+            Term t = primos.get(i);
+            sb.append(convertirTermino(t.bits));
+            if (i < primos.size() - 1) sb.append(" + ");
+        }
+
+        return sb.length() == 0 ? "0" : sb.toString();
+    }
+
+    private String convertirTermino(String bits) {
+        StringBuilder sb = new StringBuilder();
+
+        for (int i = 0; i < bits.length(); i++) {
+            char c = bits.charAt(i);
+            char var = (char) ('A' + i);
+
+            if (c == '1') sb.append(var);
+            if (c == '0') sb.append(var).append("'");
+        }
+        return sb.toString();
     }
 
     private int pedirNumeroVariables() {
@@ -103,7 +143,7 @@ public class ConsolaUI {
 
     public void mostrarResultado(String expresion) {
         System.out.println("\nRESULTADO SIMPLIFICADO");
-        System.out.println(expresion);
+        System.out.println("F = " + expresion);
     }
 
     private String mostrarCombinacion(boolean[] fila) {
