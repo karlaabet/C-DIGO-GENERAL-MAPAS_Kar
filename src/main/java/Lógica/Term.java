@@ -2,8 +2,7 @@
 package Lógica;
 
 public class Term {
-    String bits;
-    boolean usado = false;
+    public String bits;
 
     public Term(String bits) {
         this.bits = bits;
