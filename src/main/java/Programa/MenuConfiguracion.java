@@ -23,6 +23,7 @@ public class MenuConfiguracion extends javax.swing.JFrame {
      */
     public MenuConfiguracion() {
         initComponents();
+         this.setLocationRelativeTo(null);
     }
 
     /**
