@@ -192,7 +192,7 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Yu Gothic UI Semibold" size="12" style="0"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="SOLUCION "/>
+            <Property name="text" type="java.lang.String" value="SOLUCI&#xd3;N "/>
           </Properties>
         </Component>
         <Component class="javax.swing.JRadioButton" name="rbtnTabla">

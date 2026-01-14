@@ -44,6 +44,7 @@ public class VentanaTablaVerdad extends javax.swing.JFrame {
         this.numVariables = numVariables;
         this.tipoExpresion = tipoExpresion;
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

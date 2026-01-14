@@ -23,7 +23,7 @@ public class MenuConfiguracion extends javax.swing.JFrame {
      */
     public MenuConfiguracion() {
         initComponents();
-         this.setLocationRelativeTo(null);
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -65,7 +65,7 @@ public class MenuConfiguracion extends javax.swing.JFrame {
         jLabel1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         jLabel2.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 12)); // NOI18N
-        jLabel2.setText("SOLUCION ");
+        jLabel2.setText("SOLUCIÓN ");
 
         buttonGroup1.add(rbtnTabla);
         rbtnTabla.setText("TABLA DE VALORES");
