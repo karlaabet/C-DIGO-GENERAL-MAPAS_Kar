@@ -12,7 +12,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 /**
  *
- * @author Alex (PENDEJO)
+ * @author 
  */
 public class MapaKar3Variables extends javax.swing.JFrame {
 
