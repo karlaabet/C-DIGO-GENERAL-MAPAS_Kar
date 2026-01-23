@@ -13,8 +13,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 /**
- * Interfaz para Mapa de Karnaugh de 2 variables (2x2)
- * @author Alex
+ * @author 
  */
 public class MapaKar2Variables extends javax.swing.JFrame {
 
