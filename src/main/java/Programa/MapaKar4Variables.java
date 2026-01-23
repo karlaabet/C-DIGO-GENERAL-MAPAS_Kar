@@ -8,8 +8,7 @@ import javax.swing.*;
 import java.awt.Color;
 import java.util.*;
 /**
- *
- * @author Alexd
+ * @author 
  */
 public class MapaKar4Variables extends javax.swing.JFrame {
     
