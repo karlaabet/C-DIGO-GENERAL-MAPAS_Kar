@@ -14,7 +14,7 @@ public class Term {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Term term = (Term);
+        Term term = (Term) o;
         return Objects.equals(bits, term.bits);
     }
 
