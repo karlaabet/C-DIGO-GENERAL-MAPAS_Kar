@@ -39,9 +39,6 @@ public class MenuConfiguracion extends javax.swing.JFrame {
         buttonGroup2 = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        rbtnTabla = new javax.swing.JRadioButton();
-        rbtnExpresiones = new javax.swing.JRadioButton();
         jLabel3 = new javax.swing.JLabel();
         cmbVariables = new javax.swing.JComboBox<>();
         jLabel4 = new javax.swing.JLabel();
@@ -53,179 +50,107 @@ public class MenuConfiguracion extends javax.swing.JFrame {
         lblC = new javax.swing.JLabel();
         lblD = new javax.swing.JLabel();
         btnConfirmar = new javax.swing.JButton();
-        jSeparator1 = new javax.swing.JSeparator();
         jSeparator2 = new javax.swing.JSeparator();
         jSeparator3 = new javax.swing.JSeparator();
         jSeparator4 = new javax.swing.JSeparator();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(385, 450));
 
-        jLabel1.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 18)); // NOI18N
+        jPanel1.setBackground(new java.awt.Color(23, 45, 83));
+        jPanel1.setPreferredSize(new java.awt.Dimension(375, 450));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel1.setBackground(new java.awt.Color(23, 45, 83));
+        jLabel1.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("SIMPLIFICADOR DE EXPRESIONES");
-        jLabel1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jLabel1.setOpaque(true);
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, -1, 24));
 
-        jLabel2.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 12)); // NOI18N
-        jLabel2.setText("SOLUCIÓN ");
-
-        buttonGroup1.add(rbtnTabla);
-        rbtnTabla.setText("TABLA DE VALORES");
-        rbtnTabla.addActionListener(this::rbtnTablaActionPerformed);
-
-        buttonGroup1.add(rbtnExpresiones);
-        rbtnExpresiones.setText("EXPRESIONES");
-
-        jLabel3.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 12)); // NOI18N
+        jLabel3.setBackground(new java.awt.Color(23, 45, 83));
+        jLabel3.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("NÚMERO DE VARIABLES");
-        jLabel3.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jLabel3.setOpaque(true);
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(18, 115, -1, -1));
 
+        cmbVariables.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        cmbVariables.setForeground(new java.awt.Color(44, 62, 80));
         cmbVariables.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Opciones", "2 Variables", "3 Variables", "4 Variables" }));
+        cmbVariables.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(22, 160, 130), 1, true));
         cmbVariables.addActionListener(this::cmbVariablesActionPerformed);
+        jPanel1.add(cmbVariables, new org.netbeans.lib.awtextra.AbsoluteConstraints(225, 110, -1, -1));
 
-        jLabel4.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 12)); // NOI18N
+        jLabel4.setBackground(new java.awt.Color(23, 45, 83));
+        jLabel4.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("TIPO DE EXPRESIÓN");
+        jLabel4.setOpaque(true);
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(96, 169, -1, -1));
 
+        rbtnSOP.setBackground(new java.awt.Color(23, 45, 83));
         buttonGroup2.add(rbtnSOP);
+        rbtnSOP.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        rbtnSOP.setForeground(new java.awt.Color(255, 255, 255));
         rbtnSOP.setText("SOP");
+        rbtnSOP.setOpaque(true);
         rbtnSOP.addActionListener(this::rbtnSOPActionPerformed);
+        jPanel1.add(rbtnSOP, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 198, -1, -1));
 
+        rbtnPOS.setBackground(new java.awt.Color(23, 45, 83));
         buttonGroup2.add(rbtnPOS);
+        rbtnPOS.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        rbtnPOS.setForeground(new java.awt.Color(255, 255, 255));
         rbtnPOS.setText("POS");
         rbtnPOS.addActionListener(this::rbtnPOSActionPerformed);
+        jPanel1.add(rbtnPOS, new org.netbeans.lib.awtextra.AbsoluteConstraints(255, 198, -1, -1));
 
-        jLabel5.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 12)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("VARIABLES");
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 270, -1, -1));
 
-        lblA.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 36)); // NOI18N
+        lblA.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 36)); // NOI18N
+        lblA.setForeground(new java.awt.Color(107, 141, 213));
         lblA.setText("A");
+        jPanel1.add(lblA, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 300, 45, -1));
 
         lblB.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 36)); // NOI18N
+        lblB.setForeground(new java.awt.Color(107, 141, 213));
         lblB.setText("B");
+        jPanel1.add(lblB, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 300, 45, -1));
 
         lblC.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 36)); // NOI18N
+        lblC.setForeground(new java.awt.Color(107, 141, 213));
         lblC.setText("C");
+        jPanel1.add(lblC, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 300, -1, -1));
 
         lblD.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 36)); // NOI18N
+        lblD.setForeground(new java.awt.Color(107, 141, 213));
         lblD.setText("D");
+        jPanel1.add(lblD, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 300, -1, -1));
 
+        btnConfirmar.setBackground(new java.awt.Color(55, 105, 194));
+        btnConfirmar.setForeground(new java.awt.Color(255, 255, 255));
         btnConfirmar.setText("CONFIRMAR");
         btnConfirmar.addActionListener(this::btnConfirmarActionPerformed);
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(rbtnTabla)
-                            .addComponent(jLabel3))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(rbtnExpresiones)
-                            .addComponent(cmbVariables, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(41, 41, 41))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(16, 16, 16)
-                        .addComponent(lblA, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(46, 46, 46)
-                        .addComponent(lblB, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(36, 36, 36)
-                        .addComponent(lblC)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(lblD)
-                        .addGap(44, 44, 44))))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(0, 36, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(rbtnSOP)
-                        .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addGap(72, 72, 72)
-                            .addComponent(jLabel4)))
-                    .addComponent(jLabel2))
-                .addGap(39, 39, 39)
-                .addComponent(rbtnPOS)
-                .addGap(57, 57, 57))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jSeparator1)
-                .addContainerGap())
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jSeparator2)
-                .addContainerGap())
-            .addComponent(jSeparator3)
-            .addComponent(jSeparator4)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(146, 146, 146)
-                        .addComponent(jLabel5))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(btnConfirmar))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(35, 35, 35)
-                        .addComponent(jLabel1)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(7, 7, 7)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(rbtnTabla)
-                    .addComponent(rbtnExpresiones))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(10, 10, 10)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(cmbVariables, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 13, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(rbtnSOP)
-                    .addComponent(rbtnPOS))
-                .addGap(18, 18, 18)
-                .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel5)
-                .addGap(35, 35, 35)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblA)
-                    .addComponent(lblB)
-                    .addComponent(lblC)
-                    .addComponent(lblD))
-                .addGap(50, 50, 50)
-                .addComponent(btnConfirmar)
-                .addGap(44, 44, 44))
-        );
+        jPanel1.add(btnConfirmar, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 364, -1, -1));
+        jPanel1.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 359, 10));
+        jPanel1.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 150, 365, 13));
+        jPanel1.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 252, 365, 11));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 381, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 476, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -257,11 +182,6 @@ public class MenuConfiguracion extends javax.swing.JFrame {
         
     }//GEN-LAST:event_cmbVariablesActionPerformed
 
-    private void rbtnTablaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbtnTablaActionPerformed
-        
-        
-    }//GEN-LAST:event_rbtnTablaActionPerformed
-
     private void rbtnSOPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbtnSOPActionPerformed
          tipoExpresion = "SOP";
     }//GEN-LAST:event_rbtnSOPActionPerformed
@@ -279,9 +199,31 @@ public class MenuConfiguracion extends javax.swing.JFrame {
         return;
     }
 
-    // Abrir la siguiente ventana
-    VentanaTablaVerdad vt = new VentanaTablaVerdad(numVariables,tipoExpresion);
-    vt.setVisible(true);
+   
+        switch (numVariables) {
+            case 2:
+                
+                MapaKar2Variables v2 = new MapaKar2Variables(numVariables, tipoExpresion);
+                v2.setVisible(true);
+                break;
+
+            case 3:
+                
+                MapaKar3Variables v3 = new MapaKar3Variables(numVariables, tipoExpresion);
+                v3.setVisible(true);
+                break;
+
+            case 4:
+                
+                MapaKar4Variables v4 = new MapaKar4Variables(numVariables, tipoExpresion);
+                v4.setVisible(true);
+                break;
+
+            default:
+                JOptionPane.showMessageDialog(this, "Error en la selección.");
+                return;
+            
+        }
 
     // Opcional: cerrar esta
     this.dispose();
@@ -319,12 +261,10 @@ public class MenuConfiguracion extends javax.swing.JFrame {
     private javax.swing.ButtonGroup buttonGroup2;
     private javax.swing.JComboBox<String> cmbVariables;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JSeparator jSeparator4;
@@ -332,9 +272,7 @@ public class MenuConfiguracion extends javax.swing.JFrame {
     private javax.swing.JLabel lblB;
     private javax.swing.JLabel lblC;
     private javax.swing.JLabel lblD;
-    private javax.swing.JRadioButton rbtnExpresiones;
     private javax.swing.JRadioButton rbtnPOS;
     private javax.swing.JRadioButton rbtnSOP;
-    private javax.swing.JRadioButton rbtnTabla;
     // End of variables declaration//GEN-END:variables
 }

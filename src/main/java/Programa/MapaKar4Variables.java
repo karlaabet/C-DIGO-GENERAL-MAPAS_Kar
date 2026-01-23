@@ -5,15 +5,16 @@
 package Programa;
 import Lógica.*;
 import javax.swing.*;
+import java.awt.Color;
 import java.util.*;
 /**
- *
- * @author Alexd
+ * @author 
  */
-public class VentanaTablaVerdad extends javax.swing.JFrame {
+public class MapaKar4Variables extends javax.swing.JFrame {
     
     private int numVariables;
     private String tipoExpresion;
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -24,100 +25,110 @@ public class VentanaTablaVerdad extends javax.swing.JFrame {
     private void initComponents() {
 
         buttonGroup1 = new javax.swing.ButtonGroup();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        panelMapa = new javax.swing.JPanel();
+        jPanel1 = new javax.swing.JPanel();
+        jButton2 = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
         jLabel11 = new javax.swing.JLabel();
+        panelMapa = new javax.swing.JPanel();
         jLabel12 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(23, 45, 83));
+
+        jPanel1.setBackground(new java.awt.Color(23, 45, 83));
+
+        jButton2.setText("Volver");
+        jButton2.addActionListener(this::jButton2ActionPerformed);
+
+        jLabel3.setFont(new java.awt.Font("Bodoni MT", 1, 24)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setText("00");
+
+        jLabel4.setFont(new java.awt.Font("Bodoni MT", 1, 24)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setText("11");
+
+        jLabel5.setFont(new java.awt.Font("Bodoni MT", 1, 24)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel5.setText("01");
+
+        jLabel6.setFont(new java.awt.Font("Bodoni MT", 1, 24)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel6.setText("10");
+
+        jLabel7.setFont(new java.awt.Font("Bodoni MT", 1, 24)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel7.setText("00");
+
+        jLabel8.setFont(new java.awt.Font("Bodoni MT", 1, 24)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel8.setText("11");
 
         jLabel1.setFont(new java.awt.Font("Consolas", 0, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 0, 102));
         jLabel1.setText("MAPA DE KARNAUGH");
 
-        jLabel2.setText("Nota: Hacer clik en el cuadro correspondiente para cambiar el valor entre 1 y 0");
+        jLabel9.setFont(new java.awt.Font("Bodoni MT", 1, 24)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel9.setText("10");
+
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setText("Nota: Hacer click en el cuadro correspondiente para cambiar el valor entre 1 y 0");
+
+        jLabel10.setFont(new java.awt.Font("Bodoni MT", 1, 24)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel10.setText("01");
 
         jButton1.setText("Calcular");
         jButton1.addActionListener(this::jButton1ActionPerformed);
 
-        panelMapa.setLayout(new java.awt.GridLayout(4, 4));
-
-        jLabel3.setFont(new java.awt.Font("Bodoni MT", 1, 24)); // NOI18N
-        jLabel3.setText("00");
-
-        jLabel4.setFont(new java.awt.Font("Bodoni MT", 1, 24)); // NOI18N
-        jLabel4.setText("11");
-
-        jLabel5.setFont(new java.awt.Font("Bodoni MT", 1, 24)); // NOI18N
-        jLabel5.setText("01");
-
-        jLabel6.setFont(new java.awt.Font("Bodoni MT", 1, 24)); // NOI18N
-        jLabel6.setText("10");
-
-        jLabel7.setFont(new java.awt.Font("Bodoni MT", 1, 24)); // NOI18N
-        jLabel7.setText("00");
-
-        jLabel8.setFont(new java.awt.Font("Bodoni MT", 1, 24)); // NOI18N
-        jLabel8.setText("11");
-
-        jLabel9.setFont(new java.awt.Font("Bodoni MT", 1, 24)); // NOI18N
-        jLabel9.setText("10");
-
-        jLabel10.setFont(new java.awt.Font("Bodoni MT", 1, 24)); // NOI18N
-        jLabel10.setText("01");
-
         jLabel11.setFont(new java.awt.Font("Bodoni MT", 1, 14)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(255, 255, 255));
         jLabel11.setText("AB");
         jLabel11.setToolTipText("");
 
+        panelMapa.setLayout(new java.awt.GridLayout(4, 4));
+
         jLabel12.setFont(new java.awt.Font("Bodoni MT", 1, 14)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(255, 255, 255));
         jLabel12.setText("CD");
         jLabel12.setToolTipText("");
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(83, 83, 83)
-                .addComponent(jLabel2)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(33, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jButton1)
-                        .addGap(236, 236, 236))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addGap(100, 100, 100))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(61, 61, 61)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                         .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addComponent(jLabel11))
                                 .addGap(27, 27, 27))
-                            .addGroup(layout.createSequentialGroup()
+                            .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel12)
                                 .addGap(18, 18, 18)))
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel1)
                             .addComponent(panelMapa, javax.swing.GroupLayout.PREFERRED_SIZE, 392, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createSequentialGroup()
+                            .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(23, 23, 23)
                                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(76, 76, 76)
@@ -125,34 +136,42 @@ public class VentanaTablaVerdad extends javax.swing.JFrame {
                                 .addGap(57, 57, 57)
                                 .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(60, 60, 60)
-                                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(71, 71, 71))))
+                                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(80, 80, 80)
+                        .addComponent(jLabel2)))
+                .addContainerGap(32, Short.MAX_VALUE))
+            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createSequentialGroup()
+                    .addGap(85, 85, 85)
+                    .addComponent(jButton1)
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 304, Short.MAX_VALUE)
+                    .addComponent(jButton2)
+                    .addGap(51, 51, 51)))
         );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(11, 11, 11)
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(20, 20, 20)
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel2)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(37, 37, 37)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(11, 11, 11)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel3)
                             .addComponent(jLabel4)
                             .addComponent(jLabel5)
                             .addComponent(jLabel6)
                             .addComponent(jLabel11))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel12)
                         .addGap(35, 35, 35)))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(panelMapa, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 14, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(panelMapa, javax.swing.GroupLayout.DEFAULT_SIZE, 295, Short.MAX_VALUE)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel7)
                         .addGap(37, 37, 37)
                         .addComponent(jLabel10)
@@ -160,15 +179,33 @@ public class VentanaTablaVerdad extends javax.swing.JFrame {
                         .addComponent(jLabel8)
                         .addGap(49, 49, 49)
                         .addComponent(jLabel9)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton1)
-                .addGap(22, 22, 22))
+                .addGap(52, 52, 52))
+            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createSequentialGroup()
+                    .addContainerGap(473, Short.MAX_VALUE)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jButton1)
+                        .addComponent(jButton2))
+                    .addContainerGap()))
+        );
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
    
-    public VentanaTablaVerdad(int numVariables, String tipoExpresion) {
+    public MapaKar4Variables(int numVariables, String tipoExpresion) {
         this.numVariables = numVariables;
         this.tipoExpresion = tipoExpresion;
         initComponents();
@@ -178,19 +215,17 @@ public class VentanaTablaVerdad extends javax.swing.JFrame {
 
     private javax.swing.JButton[][] gridButtons = new javax.swing.JButton[4][4];
     private void inicializarTablero() {
-        // Tu panelMapa ya tiene GridLayout(4,4) desde el diseño.
         
-        // Listener compartido (la acción al hacer click)
         java.awt.event.ActionListener toggleAction = new java.awt.event.ActionListener() {
             @Override
             public void actionPerformed(java.awt.event.ActionEvent e) {
                 javax.swing.JButton btn = (javax.swing.JButton) e.getSource();
                 if (btn.getText().equals("0")) {
                     btn.setText("1");
-                    btn.setBackground(java.awt.Color.CYAN); // Opcional: color
+                    btn.setBackground(new Color(255, 105, 97)); 
                 } else if (btn.getText().equals("1")) {
                     btn.setText("0");
-                    btn.setBackground(java.awt.Color.WHITE); // Opcional
+                    btn.setBackground(java.awt.Color.WHITE); 
                 }
             }
         };
@@ -199,67 +234,51 @@ public class VentanaTablaVerdad extends javax.swing.JFrame {
         for (int i = 0; i < 4; i++) {
             for (int j = 0; j < 4; j++) {
                 javax.swing.JButton btn = new javax.swing.JButton("0");
-                btn.setFont(new java.awt.Font("Arial", java.awt.Font.BOLD, 18)); // Letra grande
+                btn.setFont(new java.awt.Font("Arial", java.awt.Font.BOLD, 18)); 
                 btn.setBackground(java.awt.Color.WHITE);
                 
-                // Añadir el evento de click
                 btn.addActionListener(toggleAction);
 
-                // 1. Guardarlo en TU matriz (para lógica)
                 gridButtons[i][j] = btn; 
 
-                // 2. Añadirlo VISUALMENTE al panel que arrastraste
                 panelMapa.add(btn); 
             }
         }
         
-        // Refrescar para asegurar que se vean
         panelMapa.revalidate();
         panelMapa.repaint();
     }
     private void calcularSimplificacion() {
     try {
-        // 1. Instanciar tu Simplificador (De tu paquete Lógica)
         Simplificador simplificador = new Simplificador(numVariables);
         
-        // 2. Extraer los datos de los botones visuales
         List<Integer> minterms = new ArrayList<>();
 
-        // Matriz para mapear coordenadas visuales a índices reales (Gray Code -> Binario)
-        // Ajustado para 4 variables. Si es 3 o 2, se usarán solo las filas/cols necesarias.
         int[][] mapaIndices = {
-            {0,  1,  3,  2},   // AB=00
-            {4,  5,  7,  6},   // AB=01
-            {12, 13, 15, 14},  // AB=11 (Fila 3 visual)
-            {8,  9,  11, 10}   // AB=10 (Fila 4 visual)
+            {0,  1,  3,  2},  
+            {4,  5,  7,  6}, 
+            {12, 13, 15, 14},  
+            {8,  9,  11, 10}   
         };
 
-        // Recorremos los botones
-        // Nota: Asegúrate de que 'gridButtons' esté lleno (ver paso anterior de inicializarTablero)
         int filasVisuales = (numVariables == 2) ? 1 : (numVariables == 3) ? 2 : 4;
         int colsVisuales = (numVariables < 2) ? 2 : 4; 
-        // Ajuste rápido: Para K-Map, 2 vars es 2x2? O 1x4?
-        // Asumiremos tu grid 4x4 y limitaremos según vars.
-        
-        // RECORRIDO DE TU GRID DE BOTONES
+
+    
         for (int i = 0; i < 4; i++) {
             for (int j = 0; j < 4; j++) {
-                // Verificar límites según número de variables para no leer botones ocultos
-                // (Esta lógica depende de cómo ocultaste/mostraste los botones, 
-                //  pero si usas el mapeo completo no pasa nada si ignoras los índices altos)
+
                 
-                JButton btn = gridButtons[i][j]; // Tu matriz de botones
-                int indiceReal = mapaIndices[i][j]; // El número binario real (0-15)
+                JButton btn = gridButtons[i][j]; 
+                int indiceReal = mapaIndices[i][j];
                 
                 String valor = btn.getText();
 
-                // LÓGICA SOP (Suma de Productos) -> Buscamos los 1
                 if (tipoExpresion.equals("SOP")) {
                     if (valor.equals("1")) {
                         minterms.add(indiceReal);
                     }
                 } 
-                // LÓGICA POS (Producto de Sumas) -> Buscamos los 0
                 else { 
                     if (valor.equals("0")) {
                         minterms.add(indiceReal);
@@ -267,27 +286,16 @@ public class VentanaTablaVerdad extends javax.swing.JFrame {
                 }
             }
         }
-
-        // 3. ¡LLAMAR A TU LÓGICA EXISTENTE!
-        // Usamos QuineMcCluskey directamente ya que Simplificador.java espera int[][]
-        // pero aquí ya extrajimos la lista limpia.
         
         if (minterms.isEmpty()) {
-            mostrarResultado("0"); // O "1" dependiendo si es POS/SOP vacío
+            mostrarResultado("0");
             return;
         }
 
-        List<Term> primos = QuineMcCluskey.generarPrimos(minterms, numVariables);
-        
-        // Usamos el método de tu clase Simplificador para convertir a texto
-        // (Asegúrate de haberlo hecho public como dije en el Paso 1)
-        String resultado = simplificador.construirExpresion(primos, tipoExpresion);
+        List<Term> implicantesOptimos = QuineMcCluskey.simplificar(minterms, numVariables);
 
-        // Si es POS, el resultado matemático necesita formato (A+B) en vez de AB
-        // Tu lógica actual genera formato SOP (A'B + C). 
-        // Para POS real necesitarías invertir lógica de Morgan, pero por ahora mostremos el resultado base.
-        
-        // 4. Mostrar resultado
+        String resultado = simplificador.construirExpresion(implicantesOptimos, tipoExpresion);
+
         mostrarResultado(resultado);
 
     } catch (Exception e) {
@@ -297,13 +305,20 @@ public class VentanaTablaVerdad extends javax.swing.JFrame {
 }
 
 private void mostrarResultado(String texto) {
-    // Aquí puedes ponerlo en un JLabel, o abrir un JOptionPane
     JOptionPane.showMessageDialog(this, "La expresión simplificada es:\n\nF = " + texto, "Resultado", JOptionPane.INFORMATION_MESSAGE);
 }
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:                                           
     calcularSimplificacion();
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        
+        MenuConfiguracion menu = new MenuConfiguracion ();
+        menu.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -312,6 +327,7 @@ private void mostrarResultado(String texto) {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -324,6 +340,7 @@ private void mostrarResultado(String texto) {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel panelMapa;
     // End of variables declaration//GEN-END:variables
 }
