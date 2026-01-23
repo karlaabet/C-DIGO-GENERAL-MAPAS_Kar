@@ -58,7 +58,7 @@ public class MapaKar3Variables extends javax.swing.JFrame {
             JButton btn = (JButton) e.getSource();
             if (btn.getText().equals("0")) {
                 btn.setText("1");
-                btn.setBackground(new Color(255, 105, 97)); // Cian claro   //NO SE CUAL ES EL COLOR EN EL UI DE 4 VARIABLES
+                btn.setBackground(new Color(255, 105, 97));
             } else {
                 btn.setText("0");
                 btn.setBackground(Color.WHITE);
